@@ -1,0 +1,159 @@
+.post__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.post__container .post__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 100%;
+  min-height: 200px;
+  grid-gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-dark-grey);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.post__card .post__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.post__card .post__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 0.5rem;
+}
+.post__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 0.5rem;
+}
+.post__header__title h3::first-letter {
+  font-size: xx-large;
+  text-transform: uppercase;
+}
+.post__content .post__message {
+  font-size: 1rem;
+  margin: 0.7rem 0;
+  color: var(--color-black);
+}
+.post__card .post__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post__card .post__header .post__header__date {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.post__header__date__text .postCreator {
+  color: var(--color-lemon);
+  text-transform: uppercase;
+}
+.post__header .post__header__date .moments {
+  font-size: 0.8rem;
+  color: var(--color-bg-grey);
+}
+.post__card .edit__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.post__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.7rem 0;
+}
+.post__like__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+.post__card .post__card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.post__card .post__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.post__actions .post__smile,
+.post__actions .post__comment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.post__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.smileBtn {
+  border: none;
+  background: transparent;
+}
+.icon__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  opacity: 0.9;
+}
+.icon__box .edit__icon_disabled {
+  cursor: not-allowed;
+}
+.smile__icon,
+.delete__icon,
+.edit__icon,
+.edit__icon_disabled {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  background-color: var(--color-bg-grey);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) and (min-width: 280px) {
+  .post__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .post__container .post__card {
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .post__card .post__header {
+    margin: 1rem 0 1rem 0;
+  }
+}
+.edit__content {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  margin-top: 7rem;
+  justify-content: center;
+  align-items: center;
+}
