@@ -34,7 +34,7 @@ const getPosts = async () => {
 
 // Get post by search parameters
 const getPostBySearch = (searchQuery) =>
-  API.get(`/posts/search?searchQuery=${searchQuery}`);
+  API.get(`api/posts/search?searchQuery=${searchQuery}`);
 //update a post
 const updatePost = async (id, postData) => {
   const response = await API.patch('api/posts/' + id, postData);

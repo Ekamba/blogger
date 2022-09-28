@@ -1,9 +1,8 @@
 .register__container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 90vh;
 }
 .register__container form {
   display: flex;
@@ -72,9 +71,14 @@
   color: var(--color-white);
 }
 
-@media (max-width: 400px) and (min-width: 280px) {
+@media (max-width: 940px) and (min-width: 280px) {
+  .register__container {
+    margin: 0 1rem;
+  }
   .register__container form {
-    max-width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .login__link {
     font-size: 0.7rem;
