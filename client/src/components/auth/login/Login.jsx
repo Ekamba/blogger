@@ -6,7 +6,6 @@ import { login, reset } from '../../../features/auth/authSlice';
 import { AiOutlineLogin } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Spinner from './../../spinner/Spinner';
 
 const Login = () => {
   const [formData, setFormData] = useState({

@@ -53,11 +53,14 @@ const Post = ({ post, setPostId }) => {
       toast.warning(
         'make sure you are logged in or registered before deleting a post'
       );
+    } else if (user?.result.id !== post._id) {
+      toast.warning('You can only delete your own post');
     } else {
       dispatch(deletePost(post._id));
       toast.success('Post deleted');
     }
   };
+
   const handleSmile = (e) => {
     e.preventDefault();
     if (!user?.result) {

@@ -7,7 +7,6 @@ import { RiUserAddLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import FileBase64 from 'react-file-base64';
-import Spinner from './../../spinner/Spinner';
 
 const Register = () => {
   const [formData, setFormData] = useState({
