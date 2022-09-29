@@ -1,10 +1,10 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const postSchema = mongoose.Schema({
   postCreator: String,
   title: String,
   body: String,
-  author: String,
+  author: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   imageFile: String,
   likes: { type: [String], default: [] },
   createdAt: {
