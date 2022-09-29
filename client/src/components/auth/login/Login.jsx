@@ -59,10 +59,6 @@ const Login = () => {
     }
   };
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
   return (
     <div className="login__container">
       <form onSubmit={onSubmit}>
@@ -86,7 +82,13 @@ const Login = () => {
           placeholder="password"
         />
         <button className="button__container" type="submit">
-          Log In
+          {isLoading ? (
+            <div className="loading">
+              <p>logging in ...</p>
+            </div>
+          ) : (
+            <p>Log In</p>
+          )}
         </button>
         <Link to="/register" className="register__link">
           Don't have an account? register here.

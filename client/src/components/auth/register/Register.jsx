@@ -72,10 +72,6 @@ const Register = () => {
     }
   };
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
   return (
     <div className="register__container">
       <form className="register__form" onSubmit={onSubmit}>
@@ -119,7 +115,13 @@ const Register = () => {
           onDone={(base64) => setFormData({ ...formData, avatar: base64 })}
         />
         <button className="button__container" type="submit">
-          Sign Up
+          {isLoading ? (
+            <div className="loading">
+              <p>registering ...</p>
+            </div>
+          ) : (
+            <p>Register</p>
+          )}
         </button>
         <Link to="/login" className="login__link">
           Already have an account? Log in here.
