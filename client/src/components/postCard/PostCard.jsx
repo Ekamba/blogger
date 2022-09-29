@@ -53,7 +53,7 @@ const Post = ({ post, setPostId }) => {
       toast.warning(
         'make sure you are logged in or registered before deleting a post'
       );
-    } else if (user?.result.username !== postCreator) {
+    } else if (user?.result._id !== author) {
       toast.warning('You can only delete your own post');
     } else {
       dispatch(deletePost(post._id));
