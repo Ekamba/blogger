@@ -70,7 +70,8 @@ const Post = ({ post, setPostId }) => {
       dispatch(likePost(post._id));
     }
   };
-
+  console.log({ author: author });
+  console.log({ userId: user?.result._id });
   return (
     <div className="post__container card">
       <div className="post__card">
@@ -116,7 +117,7 @@ const Post = ({ post, setPostId }) => {
                     navigate('/login');
                   }}
                 />
-              ) : user.result._id !== author ? (
+              ) : user?.result?._id !== author ? (
                 <RiEdit2Fill
                   className="edit__icon"
                   fontSize="small"
