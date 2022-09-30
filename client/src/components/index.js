@@ -6,3 +6,4 @@ export { default as Posts } from './posts/Posts';
 export { default as PostCard } from './postCard/PostCard';
 export { default as NotFound } from './404/NotFound';
 export { default as Footer } from './footer/Footer';
+export { default as ErrorBoundary } from './errorBoundary/ErrorBoundary';
