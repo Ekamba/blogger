@@ -57,7 +57,7 @@ const Post = ({ post, setPostId }) => {
       toast.warning('You can only delete your own post');
     } else {
       dispatch(deletePost(post._id));
-      toast.success('Post deleted');
+      toast.success('Post deleted successfully');
     }
   };
 
