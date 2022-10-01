@@ -53,7 +53,7 @@ const Post = ({ post, setPostId }) => {
       toast.warning(
         'make sure you are logged in or registered before deleting a post'
       );
-    } else if (user?.result._id !== author) {
+    } else if (user?.result._id !== author.toString()) {
       toast.warning('You can only delete your own post');
     } else {
       dispatch(deletePost(post._id));
@@ -70,8 +70,7 @@ const Post = ({ post, setPostId }) => {
       dispatch(likePost(post._id));
     }
   };
-  console.log({ author: author });
-  console.log({ userId: user?.result._id });
+
   return (
     <div className="post__container card">
       <div className="post__card">
