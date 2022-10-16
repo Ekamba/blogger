@@ -37,7 +37,7 @@
   border: 1px solid var(--color-lemon);
   padding: var(--input__button__padding);
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   background-color: var(--color-grey);
   color: var(--color-black);
@@ -66,18 +66,18 @@
   border: 1px solid var(--color-lemon);
   padding: var(--input__button__padding);
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: var(--color-lemon);
   margin-bottom: 10px;
   transition: all 0.3s ease-in-out;
 }
-.form__container form input[type='file'] {
+.form__container form input[type="file"] {
   border-radius: var(--border-radius);
   transition: all 0.3s ease-in-out;
   outline: none;
 }
-.form__container form input[type='file']:focus {
+.form__container form input[type="file"]:focus {
   border: 3px solid var(--color-dark-lemon);
 }
 .form__container textarea {
@@ -86,6 +86,7 @@
   outline-width: 0;
   font-size: 1rem;
   padding: 10px;
+  border-radius: 1rem;
   max-width: 100%;
   line-height: 1.5;
   border-radius: 3px;
