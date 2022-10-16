@@ -19,7 +19,7 @@ app.use(
 );
 
 const corsOptions = {
-  origin: "https://blogger-appli.herokuapp.com/",
+  origin: "http://localhost:3000",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
