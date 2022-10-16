@@ -1,18 +1,18 @@
-import React from 'react';
-import './postCard.css';
-import { FaSmileBeam, FaRegSmile } from 'react-icons/fa';
-import { RiEdit2Fill } from 'react-icons/ri';
-import { MdDeleteOutline } from 'react-icons/md';
-import moment from 'moment';
-import { useDispatch } from 'react-redux';
-import { likePost, deletePost } from '../../features/posts/postSlice';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import React from "react";
+import "./postCard.css";
+import { FaSmileBeam, FaRegSmile } from "react-icons/fa";
+import { RiEdit2Fill } from "react-icons/ri";
+import { MdDeleteOutline } from "react-icons/md";
+import moment from "moment";
+import { useDispatch } from "react-redux";
+import { likePost, deletePost } from "../../features/posts/postSlice";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Post = ({ post, setPostId }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem("user"));
   const userId = user?.result?._id;
 
   const { title, createdAt, body, imageFile, postCreator, author, likes } =
@@ -23,18 +23,18 @@ const Post = ({ post, setPostId }) => {
       return post.likes.find((like) => like === userId) ? (
         <div className="icon__box">
           <FaSmileBeam
-            style={{ color: 'hsl(84, 35%, 39%)' }}
+            style={{ color: "hsl(84, 35%, 39%)" }}
             className="smile__icon"
           />
           &nbsp;
           {likes.length > 2
             ? `You and ${likes.length - 1} others`
-            : `${likes.length} smile${likes.length > 1 ? 's' : ''}`}
+            : `${likes.length} smile${likes.length > 1 ? "s" : ""}`}
         </div>
       ) : (
         <div className="icon__box">
           <FaRegSmile className="smile__icon" />
-          &nbsp;{likes.length} {likes.length === 1 ? 'smile' : 'smiles'}
+          &nbsp;{likes.length} {likes.length === 1 ? "smile" : "smiles"}
         </div>
       );
     }
@@ -49,23 +49,23 @@ const Post = ({ post, setPostId }) => {
   const handleDelete = (e) => {
     e.preventDefault();
     if (!user?.result) {
-      navigate('/login');
+      navigate("/login");
       toast.warning(
-        'make sure you are logged in or registered before deleting a post'
+        "make sure you are logged in or registered before deleting a post"
       );
     } else if (user?.result._id !== author.toString()) {
-      toast.warning('You can only delete your own post');
+      toast.warning("You can only delete your own post");
     } else {
       dispatch(deletePost(post._id));
-      toast.success('Post deleted successfully');
+      toast.success("Post deleted successfully");
     }
   };
 
   const handleSmile = (e) => {
     e.preventDefault();
     if (!user?.result) {
-      navigate('/login');
-      toast.warning('You need to log in or register to smile on a post');
+      navigate("/login");
+      toast.warning("You need to log in or register to smile on a post");
     } else {
       dispatch(likePost(post._id));
     }
@@ -95,7 +95,7 @@ const Post = ({ post, setPostId }) => {
                   />
                 </>
               ) : (
-                ''
+                ""
               )}
               <span className="post__header__date__text">
                 <p className="postCreator">{postCreator}</p>
@@ -113,7 +113,7 @@ const Post = ({ post, setPostId }) => {
                   className="edit__icon"
                   fontSize="small"
                   onClick={() => {
-                    navigate('/login');
+                    navigate("/login");
                   }}
                 />
               ) : user?.result?._id !== author ? (
@@ -121,7 +121,7 @@ const Post = ({ post, setPostId }) => {
                   className="edit__icon"
                   fontSize="small"
                   onClick={() => {
-                    toast.warning('You can only update your own post.');
+                    toast.warning("You can only update your own post.");
                   }}
                 />
               ) : (

@@ -1,8 +1,8 @@
-import React from 'react';
-import './posts.css';
-import PostCard from '../postCard/PostCard';
-import Spinner from './../spinner/Spinner';
-import { useSelector } from 'react-redux';
+import React from "react";
+import "./posts.css";
+import PostCard from "../postCard/PostCard";
+import Spinner from "./../spinner/Spinner";
+import { useSelector } from "react-redux";
 
 const Posts = ({ setPostId }) => {
   const { posts, isLoading } = useSelector((state) => ({ ...state.posts }));
@@ -13,7 +13,7 @@ const Posts = ({ setPostId }) => {
         <div className="loader">
           <Spinner />
         </div>
-      ) : !posts ? (
+      ) : posts.length === 0 ? (
         <div className="no__post__container">
           <p className="no__post__text">No post found!</p>
           <img

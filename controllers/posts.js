@@ -1,13 +1,13 @@
-import express from 'express';
-import mongoose from 'mongoose';
+import express from "express";
+import mongoose from "mongoose";
 
-import Post from '../models/post.js';
+import Post from "../models/post.js";
 
 const router = express.Router();
 
 export const getPosts = async (req, res) => {
   try {
-    const posts = await await Post.find().populate('user');
+    const posts = await Post.find({}).sort({ createdAt: -1 }).populate("user");
     res.status(200).json(posts);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -18,7 +18,7 @@ export const getPostsBySearch = async (req, res) => {
   const { searchQuery } = req.query;
 
   try {
-    const title = new RegExp(searchQuery, 'i');
+    const title = new RegExp(searchQuery, "i");
 
     const posts = await Post.find({
       title,
@@ -84,14 +84,14 @@ export const deletePost = async (req, res) => {
 
   await Post.findByIdAndRemove(id);
 
-  res.json({ message: 'Post deleted successfully.' });
+  res.json({ message: "Post deleted successfully." });
 };
 
 export const likePost = async (req, res) => {
   const { id } = req.params;
 
   if (!req.userId) {
-    return res.json({ message: 'Unauthenticated' });
+    return res.json({ message: "Unauthenticated" });
   }
 
   if (!mongoose.Types.ObjectId.isValid(id))
