@@ -10,6 +10,13 @@ import morgan from "morgan";
 const app = express();
 const __dirname = path.dirname("index.html");
 
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
 app.use(morgan("dev"));
 // parse application/json
 
@@ -17,13 +24,6 @@ app.use(express.json({ limit: "50mb", extended: true }));
 app.use(
   express.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 })
 );
-
-const corsOptions = {
-  origin: "http://localhost:3000",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
 
 app.use("/api/posts", postRoutes);
 app.use("/api/users", userRouter);
