@@ -13,4 +13,4 @@ Setup:
 
 -Live app here below 👇
 
-# https://blogger-appli.herokuapp.com/
+# https://blogger-client.netlify.app/
