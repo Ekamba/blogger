@@ -1,5 +1,6 @@
 import express from "express";
-import {} from "dotenv/config.js";
+import * as dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
 import cors from "cors";
 import postRoutes from "./routes/posts.js";
@@ -11,7 +12,7 @@ const app = express();
 const __dirname = path.dirname("index.html");
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://blogger-client.netlify.app/",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };

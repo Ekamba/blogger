@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import React from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import {
   Navbar,
   Dashboard,
@@ -11,9 +11,9 @@ import {
   Login,
   NotFound,
   ErrorBoundary,
-} from './components';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+} from "./components";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (

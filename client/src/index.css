@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
 
 :root {
   --color-lemon: hsl(84, 37%, 74%);
@@ -30,7 +30,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   overflow-x: hidden;
   height: 100%;
   background-color: var(--color-grey);
@@ -78,7 +78,7 @@ a {
   font-weight: 700;
   border-radius: var(--border-radius);
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-dark-grey);
   -webkit-transition-property: color;
   transition-property: color;
@@ -87,7 +87,7 @@ a {
   outline: none;
 }
 .button__container:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   top: 0;
