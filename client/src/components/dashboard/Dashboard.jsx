@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import './dashboard.css';
-import Posts from '../posts/Posts';
-import Form from '../form/Form';
-import { useDispatch } from 'react-redux';
-import { getPosts } from '../../features/posts/postSlice';
+import React, { useEffect, useState } from "react";
+import "./dashboard.css";
+import Posts from "../posts/Posts";
+import Form from "../form/Form";
+import { useDispatch } from "react-redux";
+import { getPosts } from "../../features/posts/postSlice";
 
 const Dashboard = () => {
   const [postId, setPostId] = useState(null);
@@ -14,7 +14,7 @@ const Dashboard = () => {
   }, [postId, dispatch]);
 
   useEffect(() => {
-    document.title = 'Dashboard Page';
+    document.title = "Dashboard Page";
   }, [dispatch]);
 
   return (

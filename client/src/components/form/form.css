@@ -99,19 +99,6 @@
 .form__container textarea::placeholder {
   color: var(--color-black);
 }
-.form__container .why__smile {
-  display: flex;
-  position: sticky;
-  justify-content: center;
-  top: 31rem;
-  background-color: var(--color-yellow);
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-.form__container .why__smile svg {
-  font-size: 2rem;
-  margin-top: 0.5rem;
-}
 
 @media (max-width: 940px) and (min-width: 280px) {
   .form__container {
