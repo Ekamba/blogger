@@ -12,10 +12,7 @@ const app = express();
 const __dirname = path.dirname("index.html");
 
 const corsOptions = {
-  origin:
-    // "https://blogger-client.netlify.app"
-    "http://localhost:3000",
-
+  origin: "https://blogger-client.netlify.app",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
