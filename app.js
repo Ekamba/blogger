@@ -12,7 +12,7 @@ const app = express();
 const __dirname = path.dirname("index.html");
 
 const corsOptions = {
-  origin: "https://blogger-app.onrender.com",
+  origin: "https://blogger-ecja.onrender.com",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
