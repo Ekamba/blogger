@@ -12,7 +12,8 @@ const app = express();
 const __dirname = path.dirname("index.html");
 
 const corsOptions = {
-  origin: "https://blogger-client.netlify.app",
+  // origin: "https://blogger-app.onrender.com",
+  origin: "http://localhost:3000",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
