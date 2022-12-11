@@ -1,6 +1,5 @@
 import express from "express";
-import * as dotenv from "dotenv";
-dotenv.config();
+import "dotenv/config";
 import mongoose from "mongoose";
 import cors from "cors";
 import postRoutes from "./routes/posts.js";
@@ -12,7 +11,7 @@ const app = express();
 const __dirname = path.dirname("index.html");
 
 const corsOptions = {
-  origin: "https://blogger-app.onrender.com",
+  origin: "https://blogger-ecja.onrender.com",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
@@ -31,11 +30,14 @@ app.use("/api/users", userRouter);
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-const CONNECTION_URL = process.env.URL_CONNECTION;
+const MONGO_URL = process.env.URL_CONNECTION;
 const PORT = process.env.PORT || 4000;
 
 mongoose
-  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log(`Connection to MongoDB established`))
   .catch((error) => console.log(`${error} did not connect`));
 
